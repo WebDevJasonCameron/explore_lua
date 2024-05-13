@@ -1,0 +1,1 @@
+open /Applications/love.app/Contents/MacOS/love .
