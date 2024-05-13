@@ -1,25 +1,38 @@
+--- OOP
 
+local function Pet(name)
+    local age = 10
 
---local count = 0
-----while count < 10 do
-----    count = count + 1
-----    print("smash")
-----end
---
---repeat
---    count = count + 1
---    print("smash")
---until count > 0
+    return {
+        name = name or "Charlie",
+        daysAlive = age * 365,
+        status = "hungry",
+        speak = function(self, sound)
+            print(sound)
+        end,
+        feed = function(self, sound)
+            print("eating", self.name)
+            self:speak(sound)
+        end
+    }
+end
 
---io.write("What is your name? ")
---local ans = io.read()
---
---if ans == "Smash" then
---    print("Smash is Amazing!!!")
---else
---    print(ans .."? To bad, I was hoping it was Smash.")
---end
+--local cat = Pet()
+--local dog = Pet("Jack")
 
-local tbl = {
+--print(cat.daysAlive)
+--print(dog.name)
+--dog:speak("Bark!!!")
+--cat:feed("Meow")
 
-}
+local function Dog(name, breed)
+    local dog = Pet(name)
+
+    dog.breed = breed
+    dog.loyalty = 0
+
+    return dog
+end
+
+local doberman = Dog("Jesse", "bull dog")
+print(doberman.name, doberman.breed, doberman.status)
