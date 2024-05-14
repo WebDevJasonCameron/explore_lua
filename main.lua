@@ -1,3 +1,4 @@
+--@diagnostic disable: lowercase-global
 _G.love = require("love")
 
 --- LOAD
@@ -5,10 +6,11 @@ function love.load()
     jack = {
         x = 0,
         y = 0,
-        sprite = love.graphics.newImage("sprites/redHat/spriteSheet.png") -- 669x569
+        sprite = love.graphics.newImage("sprites/spriteSheet.png") -- 669x569
     }
 
-    SPRITE_WIDTH, SPRITE_HEIGHT = 669, 569
+    SPRITE_WIDTH = 5352
+    SPRITE_HEIGHT = 569
     QUAD_WIDTH = 669
     QUAD_HEIGHT = SPRITE_HEIGHT
 
@@ -23,10 +25,10 @@ end
 
 --- UPDATE
 function love.update(dt)
-    love.graphics.draw(jack.sprite, quads[1], jack.x, jack.y)
+
 end
 
 --- DRAW
 function love.draw()
-
+    love.graphics.draw(jack.sprite, quads[1], jack.x, jack.y)
 end
