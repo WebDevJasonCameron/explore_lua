@@ -1,34 +1,25 @@
 _G.love = require("love")
 
+--- LOAD
 function love.load()
-    love.graphics.setBackgroundColor(0.5, 0.5, 1)
-
-    _G.pacman = {
-        x = 200,
-        y = 250,
-        eat = false
+    jack = {
+        x = 0,
+        y = 0,
+        sprite = {
+            -- 669x569
+            image1 = love.graphics.newImage("assets/sprites")
+        }
     }
 
-    _G.food_x = 600
-
+    SPRITE_WIDTH, SPRITE_HEIGHT = 669, 569
 end
 
+--- UPDATE
 function love.update(dt)
-    pacman.x = pacman.x + 1
 
-    if pacman.x >= food_x + 20 then
-        pacman.eat = true
-    end
 end
 
+--- DRAW
 function love.draw()
-    if not pacman.eat then
-        love.graphics.setColor(0, 0, 0)
-        love.graphics.rectangle("fill", 600, 200, 70, 70)
-    end
-
-    love.graphics.setColor( 1, 0.7, 0.1)
-    love.graphics.arc("fill", pacman.x, pacman.y, 60, 1, 5)
-
 
 end
